@@ -1,0 +1,13 @@
+@import '../../../scss/_partials/variables';
+
+
+.toolbar {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    background-color: $primary-color;
+    color: $primary-fg;
+    text-align: center;
+    justify-content: center;
+    font-size: 12px;
+}

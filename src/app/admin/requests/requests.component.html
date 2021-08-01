@@ -1,0 +1,92 @@
+<div 
+    fxLayout="row wrap" 
+    fxLayoutAlign="start start"
+    class="a-req-container">
+
+    <div fxFlex="100" 
+        fxLayout="row wrap" 
+        fxLayoutAlign="start start"
+        class="a-tbl">
+
+        <div fxFlex="100" 
+            fxLayout="row wrap" 
+            fxLayoutAlign="center center"
+            class="a-tbl-header">
+
+            <div 
+                fxFlex="5" 
+                fxLayoutAlign="center center" 
+                class="a-tbl-cell"> Sr#</div>
+            <div 
+                fxFlex
+                fxLayoutAlign="center center" 
+                class="a-tbl-cell"> User ID</div>
+            <div 
+                fxFlex 
+                fxLayoutAlign="center center" 
+                class="a-tbl-cell"> Package</div>
+            <div 
+                fxFlex 
+                fxLayoutAlign="center center" 
+                class="a-tbl-cell"> Transcation ID</div>
+            <div 
+                fxFlex 
+                fxLayoutAlign="center center" 
+                class="a-tbl-cell"> Amount Paid</div>
+            <div 
+                fxFlex="30"
+                fxLayoutAlign="center center" 
+                class="a-tbl-cell"
+                style="border-right: none;"> Action</div>
+
+        </div>
+
+        <div fxFlex="100" fxLayout="row wrap" class="a-tbl-body">
+
+            <ng-container *ngFor="let d of data; let i=index">
+
+                <div fxFlex="100" 
+                    fxLayout="row wrap" 
+                    fxLayoutAlign="center center"
+                    class="a-tbl-body-row">
+
+                    <div 
+                        fxFlex="5" 
+                        fxLayoutAlign="center center" 
+                        class="a-tbl-cell"> {{i+1}}</div>
+                    <div 
+                        fxFlex
+                        fxLayoutAlign="center center" 
+                        class="a-tbl-cell"> {{d.userId}}</div>
+                    <div 
+                        fxFlex 
+                        fxLayoutAlign="center center" 
+                        class="a-tbl-cell"> {{d.package}} </div>
+                    <div 
+                        fxFlex 
+                        fxLayoutAlign="center center" 
+                        class="a-tbl-cell"> {{d.transcationId}}</div>
+                    <div 
+                        fxFlex 
+                        fxLayoutAlign="center center" 
+                        class="a-tbl-cell"> {{d.amount | currency}}</div>
+                    <div 
+                        fxFlex="30"
+                        fxLayoutAlign="center center" 
+                        class="a-tbl-cell"
+                        style="border-right: none;"> 
+
+                        <button mat-raised-button class="a-tbl-btn a-tbl-ac-btn">Approve</button>
+                        <button mat-raised-button color="warn" class="a-tbl-btn">Reject</button>
+
+                    </div>
+
+                </div>
+
+            </ng-container>
+
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,56 @@
+@import './variables';
+
+.a-req-container
+{
+    height: 100%;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 25px;
+    
+    .a-tbl {
+
+        height: 100%;
+        border-radius: 10px;
+        border: 1px solid lightgray;
+        background-color: $secondary-color;
+
+        .a-tbl-header {
+            height: 40px;
+            border-radius: 10px;
+            border-bottom: 1px solid lightgray;
+            border-right: thin solid lightgray;
+            border-left: thin solid lightgray;
+            margin-bottom: 5px;
+        }
+    
+        .a-tbl-body {
+            height: calc(100% - 40px);
+            overflow-y: auto;
+        }
+
+        .a-tbl-cell {
+            height: 100%;
+            text-align: center;
+            border-right: 1px solid lightgray;
+        }
+
+        .a-tbl-body-row {
+            @extend .a-tbl-header;
+            border-top: 1px solid lightgray;
+            background-color: #fff;
+            margin-bottom: 5px;
+        }
+
+        .a-tbl-btn {
+            height: 33px;
+            font-size: 12px;
+        }
+
+        .a-tbl-ac-btn {
+            background-color: $primary-color !important;
+            color: $primary-fg !important;
+            margin-right: 10px;
+        }
+    }
+    
+}
