@@ -3,10 +3,10 @@
     fxLayoutAlign="center center"
     class="a-profit-container">
 
-    <img src="/assets/images/add-profit.svg" width="120">
+    <img src="/assets/images/add-profit.svg" class="add-profit-img">
 
-    <div style="width: 30%;">
-        <mat-form-field appearance="outline" style="width: 100%;">
+    <div class="add-profit-content">
+        <mat-form-field appearance="outline" style="width: 100%; font-size: 12px;">
 			<mat-label>Enter Profit</mat-label>
 			<input matInput type="number" autocomplete="off" placeholder="Enter Profit" required/>
 			<!-- <mat-error *ngIf="userForm.controls.userName.hasError('required') && userForm.controls.userName.touched">
@@ -15,7 +15,7 @@
 		</mat-form-field>
     </div>
 
-    <div style="width: 30%;">
+    <div class="add-profit-content">
         <button mat-raised-button class="a-profit-btn">Withdraw</button>
     </div>
 

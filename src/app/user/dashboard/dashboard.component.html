@@ -1,0 +1,106 @@
+
+
+<div 
+    fxLayout="row wrap" 
+    fxLayoutAlign="start stretch"
+    class="a-dashboard-container" fxLayoutGap="10px">
+
+    <div fxFlex fxLayout="column" fxLayoutGap="10px" class="media-xs-sm">
+
+        <mat-card class="a-card">
+
+            <mat-card-subtitle class="a-card-font-cl" style="font-weight: 500;">Balance</mat-card-subtitle>
+            <mat-card-title class="a-card-font-cl">$89,909.90</mat-card-title>
+            <mat-card-footer style="margin: 0;" fxLayoutAlign="start center">
+                <img src="/assets/images/withdraw.svg" class="a-img">
+                <span class="a-card-font-cl" style="margin-right: 20px;">+$21.69</span>
+                <img src="/assets/images/profit.svg" class="a-img">
+                <span class="a-card-font-cl">-$239.90</span>   
+
+            </mat-card-footer>
+        </mat-card>
+
+        <mat-card class="a-card">
+
+            <mat-card-subtitle fxLayoutAlign="start center" 
+                class="a-card-font-cl"style="margin-bottom: 5px; font-weight: 500;">
+                User Info
+                <div fxFlex fxLayoutAlign="end end"> 
+                    <img src="/assets/images/edit-icon.svg" style="cursor: pointer;"> 
+                </div>
+            </mat-card-subtitle>
+            
+            <div class="a-card-font-cl">
+                <div class="info-title">
+                    <img src="/assets/images/user.svg" class="info-icn">Name</div>
+                <div class="info-title">
+                    <img src="/assets/images/location.svg" class="info-icn">
+                    Location
+                </div>
+                <div class="info-title">
+                    <img src="/assets/images/wallet.svg" class="info-icn">
+                    Wallet ID
+                </div>
+            </div>
+        </mat-card>
+
+        <mat-card class="a-card a-card-media" style=" background-color: #fff;">
+
+            <mat-card-subtitle fxLayoutAlign="start center" style="margin-bottom: 5px; font-weight: 500;">
+                Package Information
+                <div fxFlex fxLayoutAlign="end end"> 
+                    <img src="/assets/images/upgrade-package.svg" style="cursor: pointer;"> 
+                </div>
+            </mat-card-subtitle>
+            
+            <div>
+                <div class="info-title">
+                    <img src="/assets/images/package.svg" class="info-icn">
+                    Package
+                </div>
+
+                <div class="info-title">
+                    <img src="/assets/images/package-price.png" class="info-icn">
+                    Price
+                </div>
+
+                <div class="info-title">
+                    <img src="/assets/images/wallet.svg" class="info-icn">
+                    Address
+                </div>
+            </div>
+
+        </mat-card>
+
+    </div>
+
+    <div fxFlex fxLayout="column" fxLayoutGap="10px">
+
+        <mat-card  class="a-card" style="margin: 0; padding: 0; height: 200px;">
+            <img src="/assets/images/about-img.jpg" 
+                style="height: 200px; width: 100%; border-radius: 5px;">
+        </mat-card>
+
+        <mat-card 
+            fxLayout="row wrap"
+            fxLayoutAlign="center center"
+            class="a-card" style="background-color: #fff; margin-bottom: 10px;">
+
+            <img src="/assets/images/withdraw-request.png" width="80">
+
+            <div fxFlex="100">
+                <mat-form-field appearance="outline" style="width: 100%; font-size: 11px;">
+                    <mat-label>Enter Amount</mat-label>
+                    <input matInput type="number" autocomplete="off" placeholder="Enter Amount" required/>
+                </mat-form-field>
+            </div>
+        
+            <div fxFlex="100">
+                <button mat-raised-button class="a-profit-btn">Withdraw</button>
+            </div>
+
+        </mat-card>
+
+    </div>
+
+</div>

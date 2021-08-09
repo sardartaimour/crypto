@@ -9,3 +9,18 @@
     color: $primary-fg;
     font-weight: 500;
 }
+
+.only-icon {
+    justify-content: flex-end !important;
+}
+
+@media (max-width: 786px) {
+
+    .tb-media-xs-sm {
+        margin: 0px !important;
+    }
+
+    .toolbar-media-xs-sm {
+        font-size: 12px;
+    }
+}

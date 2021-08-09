@@ -1,0 +1,68 @@
+@import "../../../scss/_partials/variables";
+
+.a-container {
+    background-color: $secondary-color;
+    height: 100%;
+    overflow-y: auto;
+
+    .a-top-bar {
+        height: 70px;
+    }
+
+    .a-menu-bar {
+        height: 40px;
+    }
+
+    .a-content-area {
+        // height: calc(100% - 150px);
+        padding: 18px 100px;
+
+        .a-card {
+            height: 100%;
+            padding: 40px 100px;
+            background-color: $secondary-color;
+            box-shadow: 0px 0px 5px 1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%),
+                0px 1px 3px 0px rgb(0 0 0 / 12%);
+
+            .a-card-menu {
+                // height: 60px;
+
+                .a-card-menu-bar {
+                    border: 1px solid lightgray;
+                    border-radius: 5px;
+                    // width: fit-content;
+                }
+
+                .a-card-menu-title {
+                    padding: 10px 20px;
+                    font-weight: 400;
+                    cursor: pointer;
+                    text-decoration: none;
+                    color: $primary-color;
+                    text-align: center;
+                }
+
+                .a-card-active-menu {
+                    background-color: $primary-color;
+                    color: $primary-fg;
+                    border-radius: 5px;
+                }
+            }
+        }
+
+        .a-card-content-area {
+            // height: calc(100% - 60px);
+        }
+    }
+}
+
+@media (max-width: 786px) {
+
+    .a-content-area {
+        padding: 18px 18px !important;
+
+        .a-card {
+            padding: 20px 20px !important;
+        }
+    }
+}

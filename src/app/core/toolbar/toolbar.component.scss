@@ -11,3 +11,26 @@
         margin-left: 30px;
     }
 }
+
+@media (max-width: 786px) {
+
+    .a-menu {
+        padding: 0 20px;
+
+        .head-icn-media {
+            font-size: 13px;
+        }
+
+        .a-logout {
+            font-size: 13px;
+        }
+    }
+}
+
+@media (max-width: 425px) {
+
+    .head-icn-media {
+        display: none;
+    }
+
+}

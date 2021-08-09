@@ -1,3 +1,30 @@
-<div class="toolbar" role="banner">
-	<!-- <span>Wallet Balance: 200 USDT</span> -->
+<div class="toolbar tb-xs-sm-container" role="banner"
+	fxLayout="row wrap" 
+	fxLayoutAlign="center center" [class.only-icon]="!showBalance">
+
+	<div *ngIf="showBalance" fxFlex fxLayout="row wrap" 
+		fxLayoutAlign="center center" fxLayoutGap.gt-md="15px">
+
+		<div fxFlex 
+			fxLayout.sm="column" fxLayout.xs="column"
+			fxLayoutAlign.sm="center center" fxLayoutAlign.xs="center center"
+			fxLayout="row wrap" fxLayoutAlign="end center" fxLayoutGap.gt-md="5px">
+			
+			<div class="toolbar-media-xs-sm tb-media-xs-sm">Wallet Balance:</div>
+			<div class="toolbar-media-xs-sm tb-media-xs-sm">200 USDT</div>
+		</div>
+
+		<div fxFlex 
+			fxLayout.sm="column" fxLayout.xs="column" 
+			fxLayoutAlign.sm="center center" fxLayoutAlign.xs="center center"
+			fxLayout="row wrap" fxLayoutAlign="start center" fxLayoutGap.gt-md="5px">
+
+			<div class="toolbar-media-xs-sm">Donations:</div>
+			<div class="toolbar-media-xs-sm">0 USDT</div>
+		</div>
+		
+	</div>
+
+	<mat-icon fxFlex="10" style="color: #fff" >view_list</mat-icon>
+	
 </div>

@@ -1,0 +1,46 @@
+<div 
+    fxLayout="row wrap" 
+    fxLayoutAlign="start start"
+    class="a-req-container">
+
+    <div fxFlex="100" 
+        fxLayout="row wrap" 
+        style="height: 40px; margin-bottom: 30px;"
+        fxLayoutAlign="center center">
+
+        <button mat-raised-button class="a-tbl-btn u-tbl-h-ac" 
+            [ngClass]="isPTabSelected ? 'a-tbl-ac-btn': 'a-tbl-ac-btn-d' "
+            (click)="onHandle('Profit')">Profit</button>
+        <button mat-raised-button class="a-tbl-btn u-tbl-h-ac" 
+            [ngClass]="!isPTabSelected ? 'a-tbl-ac-btn': 'a-tbl-ac-btn-d' "
+            (click)="onHandle('Withdraw')">Withdraw</button>
+    </div>
+
+    <div style="overflow-x:auto; width: 100%;">
+        <table>
+            <tr>
+                <th class="col-0">Sr#</th>
+                <th class="col-n">User ID</th>
+                <th class="col-n">Package</th>
+                <th class="col-n">Transcation ID</th>
+                <th class="col-n">Amount Paid</th>
+                <th class="col-last">Action</th>
+            </tr>
+    
+            <tbody>
+                <tr  *ngFor="let d of data; let i=index">
+                    <td class="col-0">{{i+1}}</td>
+                    <td class="col-n"> {{d.userId}}</td>
+                    <td class="col-n"> {{d.package}}</td>
+                    <td class="col-n"> {{d.transcationId}}</td>
+                    <td class="col-n"> {{d.amount | currency}}</td>
+                    <td class="col-last">
+                        <button mat-raised-button class="a-tbl-btn a-tbl-ac-btn">Approve</button>
+                        <button mat-raised-button color="warn" class="a-tbl-btn">Reject</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
