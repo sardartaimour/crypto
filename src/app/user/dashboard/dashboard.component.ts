@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CommonService } from 'src/app/common.service';
 
 
 @Component({
@@ -7,5 +8,18 @@ import { Component } from '@angular/core';
 	styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent {
+
+	constructor(private commonService: CommonService)
+	{}
+
+	onUpdateProfile() {
+		this.commonService.editPackage = false;
+		this.commonService.editProfile = true;
+	}
+
+	onUpdatePackage() {
+		this.commonService.editProfile = false;
+		this.commonService.editPackage = true;
+	}
 	
 }

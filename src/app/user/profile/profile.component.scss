@@ -1,0 +1,49 @@
+@import '../../../scss/_partials/variables';
+
+.a-card {
+    height: 100%;
+    padding: 8px;
+    background-color: $primary-color;
+    box-shadow: 0px 0px 5px 1px rgb(0 0 0 / 20%), 
+                0px 1px 1px 0px rgb(0 0 0 / 14%), 
+                0px 1px 3px 0px rgb(0 0 0 / 12%);
+}  
+
+.profile-title-card {
+    height: fit-content; 
+    padding: 8px 50px !important; 
+    margin-bottom: 10px;
+}
+
+.profile-field-cont {
+    width: 50%; 
+    margin-bottom: 10px;
+}
+
+.profile-field {
+    width: 100%; 
+    font-size: 11px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.a-profit-btn{
+    background-color: $primary-color;
+    color: $primary-fg;
+    width: 100%;
+    margin-bottom: 10px;
+    border: 1px solid #fff;
+}
+
+::ng-deep.mat-form-field-wrapper {
+    padding: 0px !important;
+    margin: 0 !important;
+    border-radius: 10px;
+}
+
+@media (max-width: 425px) {
+
+    .profile-field-cont {
+        width: 100% !important;
+    }
+}

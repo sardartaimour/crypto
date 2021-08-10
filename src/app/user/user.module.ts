@@ -11,6 +11,8 @@ import { MainComponent } from './main/main.component';
 import { TranscationComponent } from './transcations/transcation.component';
 import { MyNetworkComponent } from './my-network/network.component';
 import { WithDrawRequestsComponent } from './widthdraw-requests/withdraw.requests.component';
+import { UserProfileComponent } from './profile/profile.component';
+import { UserPackageComponent } from './package/package.component';
 
 
 const routes: Routes = [
@@ -62,7 +64,9 @@ const routes: Routes = [
 		DashboardComponent,
 		TranscationComponent,
 		MyNetworkComponent,
-		WithDrawRequestsComponent
+		WithDrawRequestsComponent,
+		UserProfileComponent,
+		UserPackageComponent
 	],
 	imports: [
 		CommonModule,

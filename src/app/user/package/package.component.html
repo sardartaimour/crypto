@@ -1,0 +1,63 @@
+<div style="height: 100%; padding: 20px 0px;"
+    fxLayout="row wrap" 
+    fxLayoutAlign="center center">
+
+    <mat-card class="a-card package-title-card" fxFlex.xs="100">
+        <h3 style="color: #fff; text-align: center;">Select a Package</h3>
+    </mat-card>
+
+    <div fxFlex="100" 
+        fxLayout="row wrap" 
+        class="package-info-container"
+        fxLayoutAlign="space-between center">
+
+        <mat-card fxFlex="49" fxFlex.xs="100" 
+            fxLayout="row wrap"
+            class="a-card instructionc-card">
+
+            <h2 fxFlex="100">Instructions</h2>
+            <ol>
+                <li>Select a package</li>
+                <li>Copy below wallet address</li>
+                <li>Make a transcation with ETH</li>
+                <li>Copy generated transcation ID</li>
+                <li>Paste or type your transcation ID</li>
+                <li>Done</li>
+            </ol>
+
+            <div fxFlex="100" class="a-card package-sub-card" style="background-color: #eee;">
+                <h2 style="text-align: center; color: #000; margin-bottom: 0;">Wallet Address</h2>
+                <div style="text-align: center; color: #000">ailkfu77899023hydet572wsur799344hwe</div>
+            </div>
+
+        </mat-card>
+
+        <div fxFlex="49" fxFlex.xs="100" fxLayout="row wrap">
+
+            <div fxFlex="100" fxLayout="row wrap" 
+                fxLayoutAlign="space-between center">
+                <mat-card fxFlex="32" fxFlex.xs="48" class="a-card package-card" 
+                    *ngFor="let p of packages"> {{p?.name}}</mat-card>
+            </div>
+
+            <div fxFlex="100" style="margin-bottom: 10px;" class="a-card package-sub-card">
+                <h2 style="text-align: center; color: lightgray; margin-bottom: 0;">Packgae Value</h2>
+                <h2 style="text-align: center; color: #fff; margin-bottom: 0;">$100 <span>+ $5</span></h2>
+            </div>
+
+            <div fxFlex="100" style="margin-bottom: 10px;">
+                <mat-form-field appearance="outline" class="package-field">
+                    <input matInput type="text" autocomplete="off" 
+                        placeholder="Enter your Business transcation ID" required/>
+                </mat-form-field>
+            </div>
+
+            <div fxFlex="100" style="margin-bottom: 10px;">
+                <button mat-raised-button class="a-package-btn">I've Paid</button>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

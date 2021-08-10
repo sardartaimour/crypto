@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CommonService } from 'src/app/common.service';
 
 
 @Component({
@@ -28,7 +29,23 @@ export class MainComponent {
 	]
 	
 
-	constructor() 
+	constructor(private commonService: CommonService) 
 	{
+	}
+
+	get isRoutingEnabled(): boolean
+	{
+		return !this.commonService.editProfile && !this.commonService.editPackage ? true : false;
+	}
+
+
+	get editProfile(): boolean
+	{
+		return this.commonService.editProfile;
+	}
+
+	get editPackage(): boolean
+	{
+		return this.commonService.editPackage;
 	}
 }

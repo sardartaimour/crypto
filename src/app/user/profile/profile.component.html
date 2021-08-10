@@ -1,0 +1,39 @@
+<div style="height: 100%; padding: 20px 0px;"
+    fxLayout="row wrap" 
+    fxLayoutAlign="center center">
+
+    <mat-card class="a-card profile-title-card" fxFlex.xs="100">
+        <h3 style="color: #fff; text-align: center;">Profile Information</h3>
+    </mat-card>
+
+    <mat-card fxFlex="100" class="a-card" fxLayoutAlign="center center" fxLayout="column">
+
+        <div class="profile-field-cont">
+            <mat-form-field appearance="outline" class="profile-field">
+                <!-- <mat-label>Location</mat-label> -->
+                <input matInput type="text" autocomplete="off" placeholder="Location" required/>
+            </mat-form-field>
+        </div>
+
+        <div class="profile-field-cont">
+            <mat-form-field appearance="outline" class="profile-field">
+                <!-- <mat-label>Contact#</mat-label> -->
+                <input matInput type="text" autocomplete="off" placeholder="Contact" required/>
+            </mat-form-field>
+        </div>
+
+        <div class="profile-field-cont">
+            <mat-form-field appearance="outline" class="profile-field">
+                <!-- <mat-label>Wallet Address</mat-label> -->
+                <input matInput type="text" autocomplete="off" placeholder="Wallet Address" required/>
+            </mat-form-field>
+        </div>
+
+        <div class="profile-field-cont">
+            <button mat-raised-button class="a-profit-btn">Next</button>
+            <button mat-raised-button color="warn" style="width: 100%;">Cancel</button>
+        </div>
+
+    </mat-card>
+
+</div>

@@ -56,6 +56,13 @@
     }
 }
 
+.bg-img {
+    background-image: url('/assets/images/cool-background.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
 @media (max-width: 786px) {
 
     .a-content-area {

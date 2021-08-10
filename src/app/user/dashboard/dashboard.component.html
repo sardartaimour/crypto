@@ -26,7 +26,7 @@
                 class="a-card-font-cl"style="margin-bottom: 5px; font-weight: 500;">
                 User Info
                 <div fxFlex fxLayoutAlign="end end"> 
-                    <img src="/assets/images/edit-icon.svg" style="cursor: pointer;"> 
+                    <img src="/assets/images/edit-icon.svg" style="cursor: pointer;" (click)="onUpdateProfile()"> 
                 </div>
             </mat-card-subtitle>
             
@@ -49,7 +49,7 @@
             <mat-card-subtitle fxLayoutAlign="start center" style="margin-bottom: 5px; font-weight: 500;">
                 Package Information
                 <div fxFlex fxLayoutAlign="end end"> 
-                    <img src="/assets/images/upgrade-package.svg" style="cursor: pointer;"> 
+                    <img src="/assets/images/upgrade-package.svg" style="cursor: pointer;" (click)="onUpdatePackage()">
                 </div>
             </mat-card-subtitle>
             

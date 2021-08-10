@@ -12,26 +12,35 @@
 
     <div fxFlex="100" class="a-content-area">
         <mat-card class="a-card" fxLayout="column" 
-            fxLayoutAlign="start stretch" fxLayoutGap="10px">
+            fxLayoutAlign="start stretch" fxLayoutGap="10px"
+            [class.bg-img]="!isRoutingEnabled">
 
-            <div fxFlex="100" 
-                fxLayout="row wrap" 
-                fxLayoutAlign="center start"
-                class="a-card-menu">
-
-                <div class="a-card-menu-bar" 
+            <ng-container *ngIf="isRoutingEnabled; else userProfile">
+                <div fxFlex="100" 
                     fxLayout="row wrap" 
-                    fxLayoutAlign="start stretch">
+                    fxLayoutAlign="center start"
+                    class="a-card-menu">
 
-                    <a fxFlex.sm="100" fxFlex.xs="100" class="a-card-menu-title" *ngFor="let m of menu"
-                        [routerLink]="m.url" routerLinkActive="a-card-active-menu">{{m.title}}</a>
+                    <div class="a-card-menu-bar" 
+                        fxLayout="row wrap" 
+                        fxLayoutAlign="start stretch">
 
+                        <a fxFlex.sm="100" fxFlex.xs="100" class="a-card-menu-title" *ngFor="let m of menu"
+                            [routerLink]="m.url" routerLinkActive="a-card-active-menu">{{m.title}}</a>
+
+                    </div>
                 </div>
-            </div>
 
-            <div fxFlex="100"  class="a-card-content-area">
-                <router-outlet></router-outlet>
-            </div>
+                <div fxFlex="100"  class="a-card-content-area">
+                    <router-outlet></router-outlet>
+                </div>
+
+            </ng-container>
+
+            <ng-template #userProfile>
+                <user-profile *ngIf="editProfile"></user-profile>
+                <package *ngIf="editPackage"></package>
+            </ng-template>
 
         </mat-card>
     </div>
