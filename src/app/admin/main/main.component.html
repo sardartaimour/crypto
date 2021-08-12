@@ -15,7 +15,7 @@
             fxLayout="column" 
             fxLayoutAlign="start stretch" fxLayoutGap="10px">
 
-            <div fxFlex="100" 
+            <div
                 fxLayout="row wrap" 
                 fxLayoutAlign="center start"
                 class="a-card-menu">
@@ -23,21 +23,6 @@
                 <div class="a-card-menu-bar" 
                     fxLayout="row wrap" 
                     fxLayoutAlign="start stretch">
-
-                    <!-- <div fxFlex="100" class="menu-wrapper">
-                        <header class="header">
-                         <a href="#home" class="logo">Codeconvey</a>
-                         <input class="menu-btn" type="checkbox" id="menu-btn" />
-                         <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
-                         <ul class="menu">
-                           <li><a href="#about">About</a></li>
-                           <li><a href="#contact">Contact</a></li>
-                           <li><a href="#careers">Careers</a></li>
-                           <li><a href="#contact">Blog</a></li>
-                           <li><a href="#contact">News</a></li>
-                         </ul>
-                       </header>
-                    </div> -->
 
                     <a fxFlex.sm="100" fxFlex.xs="100" class="a-card-menu-title" *ngFor="let m of menu"
                         [routerLink]="m.url" routerLinkActive="a-card-active-menu">{{m.title}}</a>
@@ -52,7 +37,7 @@
         </mat-card>
     </div>
 
-    <div fxFlex="100" class="a-menu-bar">
+    <div fxFlex="100" class="a-menu-bar heder-footer" style="bottom: 0;">
         <pt-footer></pt-footer>
     </div>
 

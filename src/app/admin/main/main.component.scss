@@ -5,6 +5,12 @@
     height: 100%;
     overflow-y: auto;
 
+    .heder-footer {
+        display: block;
+        position: -webkit-sticky;
+        position: sticky;
+    }
+
     .a-top-bar {
         height: 70px;
     }
@@ -14,7 +20,7 @@
     }
 
     .a-content-area {
-        // height: calc(100% - 150px);
+        min-height: calc(100% - 150px);
         padding: 18px 100px;
 
         .a-card {

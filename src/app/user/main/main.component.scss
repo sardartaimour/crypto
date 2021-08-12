@@ -15,6 +15,7 @@
 
     .a-content-area {
         // height: calc(100% - 150px);
+        min-height: calc(100% - 150px);
         padding: 18px 100px;
 
         .a-card {
