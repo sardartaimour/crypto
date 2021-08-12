@@ -5,6 +5,12 @@
     height: 100%;
     overflow-y: auto;
 
+    .heder-footer {
+        display: block;
+        position: -webkit-sticky;
+        position: sticky;
+    }
+
     .a-top-bar {
         height: 70px;
     }
