@@ -5,9 +5,9 @@
     <div fxFlex fxLayout="row wrap" fxLayoutAlign="end center">
 
         <img class="head-icn-media" src="/assets/images/user.svg" width="26">
-        <div class="head-icn-media" style="margin-left: 10px;"> username </div>
+        <div class="head-icn-media" style="margin-left: 10px;"> {{username}} </div>
         
-        <button mat-stroked-button class="a-logout">
+        <button mat-stroked-button class="a-logout" (click)="onLogout()">
             <mat-icon style="font-size: 18px; height: 20px; width: 20px;">logout</mat-icon> Logout
         </button>
     </div>

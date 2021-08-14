@@ -17,7 +17,7 @@ export class ApiService
     {
         this.options = {observe: 'response'};
         this.baseUrl = 'http://localhost:3000/';
-        this.token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMTYxOTRiYWI1MWRkMDFhODUzNzFkZSIsImlhdCI6MTYyODkyNzg3NiwiZXhwIjoxNjI5MTg3MDc2fQ.R-GtQKoTFdKU9sumZObFBax9Lcd4UgWLwx2bVSiyFwc';
+        this.token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMTdlYjgzNGVhYzUwMzNlNDM5NGZjMyIsImlhdCI6MTYyODk1NzU5MywiZXhwIjoxNjI5MjE2NzkzfQ.YbXBfXSrDv-JindJBkT4MGAnavsy5rPeG5rkoWXplp8';
     }
 
     public post(apiSlug: string, postData: any): Promise<any>

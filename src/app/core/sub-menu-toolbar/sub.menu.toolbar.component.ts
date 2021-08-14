@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { AppDeviceDetectorService } from 'src/app/device.detecting.service';
+import { AppConfigService } from 'src/app/services/app.config.service';
 
 
 @Component({
@@ -11,10 +12,18 @@ export class PTSubMenuToolbarComponent {
 
 	@Input() showBalance: boolean = false;
 
-	constructor(private deviceService: AppDeviceDetectorService) {}
+	constructor(
+		private deviceService: AppDeviceDetectorService,
+		private configService: AppConfigService
+	) {}
 
 	get isSmallDevices(): boolean
 	{
 		return this.deviceService.isDesktop ? false : true;
+	}
+
+	get balance()
+	{
+		return this.configService._profile.balance ?? '0.00';
 	}
 }

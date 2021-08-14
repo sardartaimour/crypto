@@ -10,14 +10,18 @@
         </tr>
 
         <tbody>
+            <tr *ngIf="data.length === 0">
+                <td colspan="100%" style="text-align: center;">No withdraw request found!</td>
+            </tr>
+
             <tr  *ngFor="let d of data; let i=index">
                 <td class="col-0">{{i+1}}</td>
                 <td class="col-n"> {{d.userId}}</td>
-                <td class="col-n"> {{d.reqAmount | currency}}</td>
+                <td class="col-n"> {{d.amount | currency}}</td>
                 <td class="col-n"> {{d.balance | currency}}</td>
-                <td class="col-n"> {{d.date}}</td>
+                <td class="col-n"> {{d.date | date: 'dd-mm-yyyy'}}</td>
                 <td class="col-last">
-                    <button mat-raised-button color="warn" class="a-tbl-btn">Cancel</button>
+                    <button mat-raised-button color="warn" (click)="onCancelRequest(d)" class="a-tbl-btn">Cancel</button>
                 </td>
             </tr>
         </tbody>

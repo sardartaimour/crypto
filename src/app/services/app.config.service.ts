@@ -18,7 +18,7 @@ export class AppConfigService
         return new Promise((resolve, reject) =>
         {   
             const headers: HttpHeaders = new HttpHeaders({
-                'auth-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMTYxOTRiYWI1MWRkMDFhODUzNzFkZSIsImlhdCI6MTYyODkyNzg3NiwiZXhwIjoxNjI5MTg3MDc2fQ.R-GtQKoTFdKU9sumZObFBax9Lcd4UgWLwx2bVSiyFwc'
+                'auth-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMTdlYjgzNGVhYzUwMzNlNDM5NGZjMyIsImlhdCI6MTYyODk1NzU5MywiZXhwIjoxNjI5MjE2NzkzfQ.YbXBfXSrDv-JindJBkT4MGAnavsy5rPeG5rkoWXplp8'
             });
 
             this.http.get(`http://localhost:3000/user/profile`, 
