@@ -37,12 +37,12 @@
                     <td class="col-0">{{i+1}}</td>
                     <td class="col-n"> {{d.userID}}</td>
                     <td class="col-n"> 
-                        <span *ngIf="isPTabSelected">{{d.profit }}</span>
+                        <span *ngIf="isPTabSelected">{{d.profit}}</span>
                         <span *ngIf="!isPTabSelected">{{d.amount | currency }}</span>
                     </td>
                     <td class="col-n"> {{d.balance | currency}}</td>
                     <td class="col-n" *ngIf="!isPTabSelected"> {{d.status}}</td>
-                    <td class="col-last"> {{d.date | date: 'dd-mm-yyyy'}}</td>
+                    <td class="col-last"> {{d.date | date: 'dd-MM-yyyy'}}</td>
                     <!-- <td class="col-last">
                         <button mat-raised-button class="a-tbl-btn a-tbl-ac-btn">Approve</button>
                         <button mat-raised-button color="warn" class="a-tbl-btn">Reject</button>

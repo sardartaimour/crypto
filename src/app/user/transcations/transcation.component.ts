@@ -32,7 +32,7 @@ export class TranscationComponent implements OnInit
 		const url = this.isPTabSelected ? 'profit/history' : 'withdraw/history';
 
 		this.apiService.get(`user/transactions/${url}`).then((resp: any) => {
-			this.data = this.isPTabSelected ? resp['profit'] : resp['withdraws'];
+			this.data = this.isPTabSelected ? resp['profits'] : resp['withdraws'];
 		}, (err: any) => {
 			this.toastr.error(err['errorMessage'], err['statusCode']);
 		});
