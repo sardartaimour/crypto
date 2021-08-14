@@ -1,23 +1,28 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdminRoutesGuard } from './app.routes.guard';
 
 
 const routes: Routes = [
 	{ 
 		path: 'admin', 
-		loadChildren: () => import(`./admin/admin.module`).then(m => m.AdminModule) 
+		loadChildren: () => import(`./admin/admin.module`).then(m => m.AdminModule),
+		data: {role: 'admin'},
+		canLoad: [AdminRoutesGuard]
 	},
-	{
-		path: 'home',
-		loadChildren: () => import(`./home/home.module`).then(m=> m.HomeModule)
-	},
+	// {
+	// 	path: 'home',
+	// 	loadChildren: () => import(`./home/home.module`).then(m=> m.HomeModule)
+	// },
 	{
 		path: 'user',
-		loadChildren: () => import(`./user/user.module`).then(m=> m.UserModule)
+		loadChildren: () => import(`./user/user.module`).then(m=> m.UserModule),
+		data: {role: 'user'},
+		canLoad: [AdminRoutesGuard]
 	},
 	{
 		path: '**', 
-		redirectTo: '/home', 
+		redirectTo: '/admin/dashboard', 
 		pathMatch: 'full'
 	}
 ];
