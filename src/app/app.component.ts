@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { fromEvent, Subscription } from 'rxjs';
 import { AppDeviceDetectorService } from './device.detecting.service';
+import { AppSplashScreenService } from './services/splash.screen.service';
 
 
 @Component({
@@ -13,7 +14,10 @@ export class AppComponent implements OnInit, OnDestroy
 	title = 'crypto';
 	resizeSubscription$: Subscription;
 
-	constructor(private deviceService: AppDeviceDetectorService)
+	constructor(
+		private deviceService: AppDeviceDetectorService,
+		private splashScreenService: AppSplashScreenService
+	)
 	{
 		this.resizeSubscription$ = null;
 	}

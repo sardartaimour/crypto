@@ -27,7 +27,7 @@
 
             <div fxFlex="100" class="a-card package-sub-card" style="background-color: #eee;">
                 <h2 style="text-align: center; color: #000; margin-bottom: 0;">Wallet Address</h2>
-                <div style="text-align: center; color: #000">ailkfu77899023hydet572wsur799344hwe</div>
+                <div style="text-align: center; color: #000">{{profile?.wAddress}}</div>
             </div>
 
         </mat-card>
@@ -36,26 +36,33 @@
 
             <div fxFlex="100" fxLayout="row wrap" 
                 fxLayoutAlign="space-between center">
-                <mat-card fxFlex="32" fxFlex.xs="48" class="a-card package-card" 
-                    *ngFor="let p of packages"> {{p?.name}}</mat-card>
+                <mat-card fxFlex="32" fxFlex.xs="48" 
+                    class="a-card package-card" 
+                    [ngClass]="selectedPackage?.name === p?.name ? 'selected-card' : 'default-card'"
+                    *ngFor="let p of packages" (click)="selectedPackage = p"> {{p?.name}}</mat-card>
             </div>
 
             <div fxFlex="100" style="margin-bottom: 10px;" class="a-card package-sub-card">
                 <h2 style="text-align: center; color: lightgray; margin-bottom: 0;">Packgae Value</h2>
-                <h2 style="text-align: center; color: #fff; margin-bottom: 0;">$100 <span>+ $5</span></h2>
+                <h2 style="text-align: center; color: #fff; margin-bottom: 0;">{{selectedPackage?.price | currency}} 
+                    <span *ngIf="selectedPackage?.subPrice">+ {{selectedPackage?.subPrice | currency}}</span></h2>
             </div>
 
             <div fxFlex="100" style="margin-bottom: 10px;">
                 <mat-form-field appearance="outline" class="package-field">
-                    <input matInput type="text" autocomplete="off" 
-                        placeholder="Enter your Business transcation ID" required/>
+                    <input matInput type="text" autocomplete="off" required
+                        placeholder="Enter your Business transcation ID" [formControl]="form.controls.tranID"/>
                 </mat-form-field>
+
+                <mat-error *ngIf="isFormSubmitted && form.controls.tranID.hasError('required')" style="font-size: 10px;">
+                    Transcation Id is required
+                </mat-error>
             </div>
 
             <div fxFlex="100" style="margin-bottom: 10px;">
-                <button mat-raised-button class="a-package-btn">I've Paid</button>
+                <button mat-raised-button class="a-package-btn" (click)="updatePackage()">I've Paid</button>
+                <button *ngIf="profile?.isActive" mat-raised-button color="warn" (click)="onCancel()" style="width: 100%;">Cancel</button>
             </div>
-
         </div>
 
     </div>

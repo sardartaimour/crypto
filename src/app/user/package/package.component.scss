@@ -8,6 +8,15 @@
                 0px 1px 3px 0px rgb(0 0 0 / 12%);
 }  
 
+.selected-card {
+    background-color: $primary-color !important;
+}
+
+.default-card {
+    background-color: #eee !important;
+    color: #000 !important;
+}
+
 .package-title-card {
     height: fit-content; 
     padding: 8px 50px !important; 
@@ -49,6 +58,7 @@ ol {
     height: fit-content; 
     text-align: center;
     margin-bottom: 10px;
+    cursor: pointer;
 }
 
 .package-field {

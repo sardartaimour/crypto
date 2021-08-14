@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { CommonService } from 'src/app/common.service';
+import { AppConfigService } from 'src/app/services/app.config.service';
+import { CommonService } from 'src/app/services/common.service';
 
 
 @Component({
@@ -29,23 +30,33 @@ export class MainComponent {
 	]
 	
 
-	constructor(private commonService: CommonService) 
+	constructor(
+		private commonService: CommonService,
+		private configService: AppConfigService
+	) 
 	{
 	}
 
 	get isRoutingEnabled(): boolean
 	{
-		return !this.commonService.editProfile && !this.commonService.editPackage ? true : false;
+		return this.isActive ? ( !this.commonService.editProfile && !this.commonService.editPackage ? true : false) : this.isActive;
 	}
-
 
 	get editProfile(): boolean
 	{
-		return this.commonService.editProfile;
+		const p = this.configService._profile;
+		return this.isActive ? this.commonService.editProfile : (p && p.hasOwnProperty('step') && p.step === 'PROFILE' ? true : false);
 	}
 
 	get editPackage(): boolean
 	{
-		return this.commonService.editPackage;
+		const p = this.configService._profile;
+		return this.isActive ? this.commonService.editPackage : (p && p.hasOwnProperty('step') && p.step === 'PACKAGE' ? true : false);
+	}
+
+	get isActive(): boolean
+	{
+		const p = this.configService._profile;
+		return p && p.hasOwnProperty('isActive') && p['isActive'];
 	}
 }
