@@ -9,16 +9,24 @@
         <mat-form-field appearance="outline" style="width: 100%; font-size: 12px;">
 			<mat-label>Enter Profit</mat-label>
 			<input matInput type="number" autocomplete="off" 
-                min="0" step="0.01"
+                min="0" step="0.01" [formControl]="profitAmount"
                 placeholder="Enter Profit" required/>
-			<!-- <mat-error *ngIf="userForm.controls.userName.hasError('required') && userForm.controls.userName.touched">
-				username is required.
-			</mat-error> -->
 		</mat-form-field>
+
+        <ng-container *ngIf="isSubmitted">
+            <mat-error *ngIf="profitAmount.hasError('required')" style="font-size: 10px;">
+                Profit is required
+            </mat-error>
+
+            <mat-error *ngIf="profitAmount.hasError('min')" style="font-size: 10px;">
+                Amount should be greater than 0
+            </mat-error>
+        </ng-container>
+
     </div>
 
-    <div class="add-profit-content">
-        <button mat-raised-button class="a-profit-btn">Withdraw</button>
+    <div class="add-profit-content" style="margin-top: 10px;">
+        <button mat-raised-button class="a-profit-btn" (click)="onAddProfit()">Withdraw</button>
     </div>
 
 </div>

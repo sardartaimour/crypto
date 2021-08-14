@@ -7,12 +7,12 @@
 
         <mat-card class="a-card">
             <mat-card-subtitle class="a-card-font-cl">Total investment</mat-card-subtitle>
-            <mat-card-title class="a-card-font-cl">$89,909.90</mat-card-title>
+            <mat-card-title class="a-card-font-cl">{{data?.totalInvestment | currency}}</mat-card-title>
             <mat-card-footer style="margin: 0;" fxLayoutAlign="start center">
                 <img src="/assets/images/withdraw.svg" class="a-img">
-                <span class="a-card-font-cl" style="margin-right: 20px;">239%</span>
+                <span class="a-card-font-cl" style="margin-right: 20px;">{{data?.totalProfits}}%</span>
                 <img src="/assets/images/profit.svg" class="a-img">
-                <span class="a-card-font-cl">$239</span>   
+                <span class="a-card-font-cl">{{data?.totalWithdraws | currency}}</span>   
 
             </mat-card-footer>
         </mat-card>
@@ -30,17 +30,17 @@
 
         <mat-card fxFlex class="a-card">
             <mat-card-subtitle class="a-card-font-cl">Total Users</mat-card-subtitle>
-            <mat-card-title class="a-card-font-cl">50,897</mat-card-title>
+            <mat-card-title class="a-card-font-cl">{{data?.totalUsers}}</mat-card-title>
         </mat-card>
 
         <mat-card fxFlex class="a-card">
             <mat-card-subtitle class="a-card-font-cl">Pending Requests</mat-card-subtitle>
-            <mat-card-title class="a-card-font-cl">50</mat-card-title>
+            <mat-card-title class="a-card-font-cl">{{data?.pendingRequests}}</mat-card-title>
         </mat-card>
 
         <mat-card fxFlex class="a-card a-card a-card-media">
             <mat-card-subtitle class="a-card-font-cl">Total Profit</mat-card-subtitle>
-            <mat-card-title class="a-card-font-cl">50.897%</mat-card-title>
+            <mat-card-title class="a-card-font-cl">{{data?.totalProfits}}%</mat-card-title>
         </mat-card>
 
     </div>

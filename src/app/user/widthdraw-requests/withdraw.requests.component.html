@@ -16,7 +16,7 @@
 
             <tr  *ngFor="let d of data; let i=index">
                 <td class="col-0">{{i+1}}</td>
-                <td class="col-n"> {{d.userId}}</td>
+                <td class="col-n"> {{d.userID}}</td>
                 <td class="col-n"> {{d.amount | currency}}</td>
                 <td class="col-n"> {{d.balance | currency}}</td>
                 <td class="col-n"> {{d.date | date: 'dd-mm-yyyy'}}</td>

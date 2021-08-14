@@ -19,6 +19,12 @@
         color: $primary-fg;
         width: 100%;
     }
+
+    ::ng-deep.mat-form-field-wrapper {
+        padding: 0px !important;
+        margin: 0 !important;
+        border-radius: 10px;
+    }
 }
 
 @media (max-width: 425px) {
