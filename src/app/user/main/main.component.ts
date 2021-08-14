@@ -54,6 +54,12 @@ export class MainComponent {
 		return this.isActive ? this.commonService.editPackage : (p && p.hasOwnProperty('step') && p.step === 'PACKAGE' ? true : false);
 	}
 
+	get waitingForApproval(): boolean
+	{
+		const p = this.configService._profile;
+		return !this.isActive && p && p.hasOwnProperty('step') && p.step === 'COMPLETED' ? true : false;
+	}
+
 	get isActive(): boolean
 	{
 		const p = this.configService._profile;

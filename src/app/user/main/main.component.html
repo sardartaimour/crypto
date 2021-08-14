@@ -40,6 +40,9 @@
             <ng-template #userProfile>
                 <user-profile *ngIf="editProfile"></user-profile>
                 <package *ngIf="editPackage"></package>
+                <div *ngIf="waitingForApproval" class="pending-req-approval">
+                    REQUEST PENDING FOR APPROVAL!
+                </div>
             </ng-template>
 
         </mat-card>

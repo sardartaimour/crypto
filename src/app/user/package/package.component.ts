@@ -19,14 +19,7 @@ export class UserPackageComponent implements OnInit
 	selectedPackage: any;
 	isFormSubmitted: boolean;
 	
-	packages: any[] = [
-		{ name: 'Bronze', price: 100, subPrice: 5},
-		{ name: 'Bronze Plus', price: 120, subPrice: 5},
-		{ name: 'Silver', price: 70, subPrice: 5},
-		{ name: 'Silver Plus', price: 90, subPrice: 5},
-		{ name: 'Gold', price: 130, subPrice: 5},
-		{ name: 'Gold Plus', price: 150, subPrice: 5}
-	];
+	packages: any[];
 
 	constructor(private configService: AppConfigService,
 		private commonService: CommonService,
@@ -39,11 +32,22 @@ export class UserPackageComponent implements OnInit
 		this.isFormSubmitted = false;
 		this.selectedPackage = null;
 		this.form = this.fb.group({});
+		this.packages = [];
 	}
 
 	ngOnInit()
 	{
+		this.onLoadPackages();
 		this.form.addControl('tranID', new FormControl(null, [Validators.required]));
+	}
+
+	onLoadPackages()
+	{
+		this.apiService.get('user/fetch/package').then((resp: any) => {
+			this.packages = resp;
+		}, (err: any) => {
+			this.toastr.error(err['errorMessage'], err['statusCode']);
+		});
 	}
 
 	updatePackage(): void

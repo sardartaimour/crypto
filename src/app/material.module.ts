@@ -14,6 +14,7 @@ import { MatPaginatorModule } from "@angular/material/paginator";
 import { MatSnackBarModule } from '@angular/material/snack-bar'; 
 import { MatSelectModule } from '@angular/material/select'; 
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
         MatPaginatorModule,
         MatSnackBarModule,
         MatSelectModule,
-        MatCheckboxModule
+        MatCheckboxModule,
+        MatAutocompleteModule
     ],
     exports: [
         FlexLayoutModule,
@@ -46,7 +48,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
         MatPaginatorModule,
         MatSnackBarModule,
         MatSelectModule,
-        MatCheckboxModule
+        MatCheckboxModule,
+        MatAutocompleteModule
     ],
     providers: []
 })

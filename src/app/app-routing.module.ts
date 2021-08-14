@@ -17,7 +17,7 @@ const routes: Routes = [
 	{
 		path: 'user',
 		loadChildren: () => import(`./user/user.module`).then(m=> m.UserModule),
-		data: {role: 'user'},
+		data: {role: 'User'},
 		canLoad: [AdminRoutesGuard]
 	},
 	{

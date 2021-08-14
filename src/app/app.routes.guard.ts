@@ -17,13 +17,28 @@ export class AdminRoutesGuard implements CanLoad
 
     canLoad(route: Route, segments: UrlSegment[]): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
         
-        // console.log('Route ' , route)
+        console.log('Route ' , route)
         const role = route.data['role'];
         const logedInUserRole = this.configService._profile && this.configService._profile['role'];
         if (role === logedInUserRole) {
 
-            let route = role === 'admin' ? 'admin/dashboard' : 'user/dashboard';
+            // let route = role === 'admin' ? 'admin/dashboard' : 'user/dashboard';
+            // console.log('User=> ', role, logedInUserRole)
+            // if (role === 'User' && route['path'].includes('admin')) {
+            //     this.router.navigate(['/user/dashboard']);
+            // }
+            // console.log('User=> ', role, logedInUserRole)
             return true;
+        }
+        else {
+            if (logedInUserRole === 'User' && !route['path'].includes('user')) {
+                this.router.navigateByUrl('user/dashboard');
+                return true;
+            }
+            else if(logedInUserRole === 'admin' && !route['path'].includes('admin')) {
+                this.router.navigateByUrl('admin/dashboard');
+                return true;
+            }
         }
 
         return false;

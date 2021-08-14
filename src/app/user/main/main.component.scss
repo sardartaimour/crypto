@@ -61,6 +61,16 @@
             // height: calc(100% - 60px);
         }
     }
+
+    .pending-req-approval {
+        color: #000;
+        font-weight: 700;
+        font-size: 24px;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        height: 100%;
+    }
 }
 
 .bg-img {

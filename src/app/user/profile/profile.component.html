@@ -10,7 +10,17 @@
 
         <div class="profile-field-cont">
             <mat-form-field appearance="outline" class="profile-field">
-                <input matInput type="text" autocomplete="off" [formControl]="form.controls.country" placeholder="Location" required/>
+                
+                <input matInput type="text" autocomplete="off" 
+                    [formControl]="form.controls.country" 
+                    placeholder="Location" required [matAutocomplete]="auto"/>
+                
+                <mat-autocomplete #auto="matAutocomplete">
+                    <mat-option *ngFor="let option of filteredOptions | async" [value]="option.value">
+                        {{option.value}}
+                    </mat-option>
+                </mat-autocomplete>
+                      
             </mat-form-field>
 
             <mat-error *ngIf="isFormSubmitted && form.controls.country.hasError('required')" style="font-size: 10px;">
