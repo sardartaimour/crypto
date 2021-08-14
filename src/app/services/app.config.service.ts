@@ -53,6 +53,6 @@ export class AppConfigService
 
     get uuid(): string
     {
-        return this.profile && this.profile.hasOwnProperty('uuid') ? this.profile['uuid'] : null;
+        return this.profile && this.profile.hasOwnProperty('uid') ? this.profile['uid'] : null;
     }
 }
