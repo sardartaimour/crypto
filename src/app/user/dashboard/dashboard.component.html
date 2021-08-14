@@ -13,9 +13,9 @@
             <mat-card-title class="a-card-font-cl">{{data?.balance | currency}}</mat-card-title>
             <mat-card-footer style="margin: 0;" fxLayoutAlign="start center">
                 <img src="/assets/images/withdraw.svg" class="a-img">
-                <span class="a-card-font-cl" style="margin-right: 20px;">+{{data?.lastProfit | currency}}</span>
+                <span class="a-card-font-cl" style="margin-right: 20px;">+{{data?.lastProfit?.profile | currency}}</span>
                 <img src="/assets/images/profit.svg" class="a-img">
-                <span class="a-card-font-cl">-{{data?.lastWithdraw | currency}}</span>   
+                <span class="a-card-font-cl">-{{data?.lastWithdraw?.amount | currency}}</span>   
 
             </mat-card-footer>
         </mat-card>
