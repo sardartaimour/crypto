@@ -26,7 +26,7 @@ export class AddProfitComponent {
 	onAddProfit(): void
 	{
 		this.isSubmitted = true;
-		if (this.profitAmount.valid) {
+		if (this.profitAmount.valid && this.profitAmount.value > 0) {
 			this.apiService.post('admin/profit', {profit: this.profitAmount.value}).then((resp: any) => {
 				this.toastr.success('Profit added successfully', '200');
 				this.isSubmitted = false;
