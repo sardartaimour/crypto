@@ -52,7 +52,7 @@ export class DashboardComponent implements OnInit {
 		this.isSubmitted = true;
 		if (this.withdrawAmount.valid) {
 			this.apiService.post('user/withdraw', {amount: this.withdrawAmount.value, uid: this.configService.uuid}).then((resp: any) => {
-				this.toastr.success('Withdraw requested submitted', '200');
+				this.toastr.success('Withdraw request submitted', 'success');
 				this.isSubmitted = false;
 			}, (err: any) => {
 				this.toastr.error(err['errorMessage'], err['statusCode']);

@@ -25,9 +25,12 @@
                 <li>Done</li>
             </ol>
 
-            <div fxFlex="100" class="a-card package-sub-card" style="background-color: #eee;">
+            <div fxFlex="100" class="a-card package-sub-card" style="background-color: #eee; position: relative;">
                 <h2 style="text-align: center; color: #000; margin-bottom: 0;">Wallet Address</h2>
-                <div style="text-align: center; color: #000">{{selectedPackage?.address}}</div>
+                <input class="walletAdress-f" readonly  #walletAddRef name="walletAddressRef" 
+                    [(ngModel)]="selectedWalletAddress" (click)="copWalletAddress('#containerid')">
+                
+                <span *ngIf="copied" class="text-copied"> Copied</span>
             </div>
 
         </mat-card>
@@ -39,7 +42,7 @@
                 <mat-card fxFlex="32" fxFlex.xs="48" 
                     class="a-card package-card" 
                     [ngClass]="selectedPackage?.name === p?.name ? 'selected-card' : 'default-card'"
-                    *ngFor="let p of packages" (click)="selectedPackage = p"> {{p?.name}}</mat-card>
+                    *ngFor="let p of packages" (click)="selectedPackage = p; selectedWalletAddress = p.address"> {{p?.name}}</mat-card>
             </div>
 
             <div fxFlex="100" style="margin-bottom: 10px;" class="a-card package-sub-card">

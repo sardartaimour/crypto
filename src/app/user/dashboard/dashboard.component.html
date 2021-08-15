@@ -12,9 +12,9 @@
             <mat-card-subtitle class="a-card-font-cl" style="font-weight: 500;">Balance</mat-card-subtitle>
             <mat-card-title class="a-card-font-cl">{{data?.balance | currency}}</mat-card-title>
             <mat-card-footer style="margin: 0;" fxLayoutAlign="start center">
-                <img src="/assets/images/withdraw.svg" class="a-img">
+                <img src="/assets/images/withdraw.svg" class="a-img" title="last profit">
                 <span class="a-card-font-cl" style="margin-right: 20px;">+{{data?.lastProfit?.profit | currency}}</span>
-                <img src="/assets/images/profit.svg" class="a-img">
+                <img src="/assets/images/profit.svg" class="a-img" title="last withdraw">
                 <span class="a-card-font-cl">-{{data?.lastWithdraw?.amount | currency}}</span>   
 
             </mat-card-footer>
@@ -26,7 +26,8 @@
                 class="a-card-font-cl"style="margin-bottom: 5px; font-weight: 500;">
                 User Info
                 <div fxFlex fxLayoutAlign="end end"> 
-                    <img src="/assets/images/edit-icon.svg" style="cursor: pointer;" (click)="onUpdateProfile()"> 
+                    <img src="/assets/images/edit-icon.svg" style="cursor: pointer;" 
+                        (click)="onUpdateProfile()" title="update profile"> 
                 </div>
             </mat-card-subtitle>
             
@@ -53,7 +54,8 @@
             <mat-card-subtitle fxLayoutAlign="start center" style="margin-bottom: 5px; font-weight: 500;">
                 Package Information
                 <div fxFlex fxLayoutAlign="end end"> 
-                    <img src="/assets/images/upgrade-package.svg" style="cursor: pointer;" (click)="onUpdatePackage()">
+                    <img src="/assets/images/upgrade-package.svg" style="cursor: pointer;" 
+                        (click)="onUpdatePackage()" title="upgrade package">
                 </div>
             </mat-card-subtitle>
             

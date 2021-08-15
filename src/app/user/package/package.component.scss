@@ -62,6 +62,30 @@ ol {
     text-align: center;
     margin-bottom: 10px;
     cursor: pointer;
+    padding: 10px 16px;
+}
+
+.walletAdress-f 
+{
+    width: 100%;
+    text-align: center;
+    border: none;
+    outline: none;
+    background: transparent;
+    cursor: copy;
+}
+
+.text-copied
+{
+    color: #000;
+    border: 1px solid #000;
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-weight: 500;
+    position: absolute;
+    right: 17px;
+    top: 8px;
+    box-shadow: 0px 0px 5px 1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
 }
 
 .package-field {

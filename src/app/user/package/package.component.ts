@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { ApiService } from 'src/app/services/app.api.service';
@@ -11,15 +11,19 @@ import { CommonService } from 'src/app/services/common.service';
 	templateUrl: './package.component.html',
 	styleUrls: ['./package.component.scss']
 })
-export class UserPackageComponent implements OnInit
+export class UserPackageComponent implements OnInit, OnDestroy
 {
 	
 	profile: any;
 	form: FormGroup;
 	selectedPackage: any;
+	selectedWalletAddress: any;
 	isFormSubmitted: boolean;
 	
 	packages: any[];
+	copied: boolean;
+	timer: any;
+	@ViewChild('walletAddRef') walletAddRef: ElementRef<any>;
 
 	constructor(private configService: AppConfigService,
 		private commonService: CommonService,
@@ -31,14 +35,24 @@ export class UserPackageComponent implements OnInit
 		this.profile = this.configService._profile;
 		this.isFormSubmitted = false;
 		this.selectedPackage = null;
+		this.selectedWalletAddress = null;
 		this.form = this.fb.group({});
 		this.packages = [];
+		this.copied = false;
+		this.timer = null;
 	}
 
 	ngOnInit()
 	{
 		this.onLoadPackages();
 		this.form.addControl('tranID', new FormControl(null, [Validators.required]));
+	}
+
+	ngOnDestroy()
+	{
+		if (this.timer) {
+			clearTimeout(this.timer);
+		}
 	}
 
 	onLoadPackages()
@@ -74,6 +88,28 @@ export class UserPackageComponent implements OnInit
 			}, (err: any) => {
 				this.toastr.error(err['errorMessage'], err['statusCode']);
 			});
+		}
+	}
+
+	copWalletAddress(containerid): void 
+	{
+		this.copied = false;
+		if (this.selectedWalletAddress) {
+
+			if (this.timer) {
+				clearTimeout(this.timer);
+			}
+
+			const copyText = this.walletAddRef.nativeElement;
+			copyText.select();
+			copyText.setSelectionRange(0, 99999)
+			document.execCommand("copy");
+			if (document.execCommand("copy")) {
+				this.copied = true;
+				this.timer = setTimeout(()=> {
+					this.copied = false;
+				}, 1000);
+			}
 		}
 	}
 

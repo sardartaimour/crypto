@@ -23,7 +23,8 @@ export class PTToolbarComponent {
 		this.apiService.get(`logout`).then((resp: any) => {
 		
 		}, (err: any) => {
-			this.toastr.error(err['errorMessage'], err['statusCode']);
+			if (err['statusCode'] !== 302 && err['statusCode'] !== 200)
+				this.toastr.error(err['errorMessage'], err['statusCode']);
 		});
 	}
 
