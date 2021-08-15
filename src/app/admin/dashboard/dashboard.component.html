@@ -3,7 +3,7 @@
     fxLayoutAlign="start stretch"
     class="a-dashboard-container" fxLayoutGap="10px">
 
-    <div fxFlex fxLex.sm="100" fxFlex.xs="100" fxLayout="column" fxLayoutGap="10px" class="media-xs-sm">
+    <div fxFlex="50" fxLex.sm="100" fxFlex.xs="100" fxLayout="column" fxLayoutGap="10px" class="media-xs-sm">
 
         <mat-card class="a-card">
             <mat-card-subtitle class="a-card-font-cl">Total investment</mat-card-subtitle>
@@ -20,7 +20,17 @@
         <mat-card 
             fxLayout="row wrap"
             fxLayoutAlign="center center"
-            class="a-card a-card-media" style="background-color: #fff !important;">
+            class="a-card a-card-media" 
+            style="background-color: #fff !important; padding: 5px 0;">
+
+            <canvas baseChart
+                [data]="pieChartData"
+                [labels]="pieChartLabels"
+                [chartType]="pieChartType"
+                [options]="pieChartOptions"
+                [colors]="pieChartColors"
+                [legend]="pieChartLegend">
+            </canvas>
 
         </mat-card>
 

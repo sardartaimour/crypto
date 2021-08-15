@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
+import { ChartsModule } from 'ng2-charts';
 
 import { PTCoreModule } from '../core/core.module';
 import { MaterialModule } from '../material.module';
@@ -70,6 +71,7 @@ const routes: Routes = [
 		ReactiveFormsModule,
 		MaterialModule,
 		PTCoreModule,
+		ChartsModule,
 		RouterModule.forChild(routes)
 	],
 	providers: [
