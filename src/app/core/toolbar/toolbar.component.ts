@@ -21,10 +21,14 @@ export class PTToolbarComponent {
 	onLogout()
 	{
 		this.apiService.get(`logout`).then((resp: any) => {
-		
+			window.location.href = "/home";
 		}, (err: any) => {
+		
 			if (err['statusCode'] !== 302 && err['statusCode'] !== 200)
 				this.toastr.error(err['errorMessage'], err['statusCode']);
+			else {
+				window.location.href = "/home";
+			}
 		});
 	}
 

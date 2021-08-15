@@ -39,6 +39,7 @@ export class WithDrawRequestsComponent implements OnInit
 	onCancelRequest(d: any)
 	{
 		d['uid'] = this.userId;
+		d['wid'] = d['_id'];
 		this.apiService.post(`user/cancelRequest`, d).then((resp: any) => {
 			this.toastr.success('Withdraw request cancelled', '200');
 			this.onLoadData();
