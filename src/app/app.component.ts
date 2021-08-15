@@ -1,5 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { fromEvent, Subscription } from 'rxjs';
+import { FacebookService, InitParams } from 'ngx-facebook';
+
 import { AppDeviceDetectorService } from './device.detecting.service';
 import { AppSplashScreenService } from './services/splash.screen.service';
 
@@ -16,7 +18,8 @@ export class AppComponent implements OnInit, OnDestroy
 
 	constructor(
 		private deviceService: AppDeviceDetectorService,
-		private splashScreenService: AppSplashScreenService
+		private splashScreenService: AppSplashScreenService,
+		private facebookService: FacebookService
 	)
 	{
 		this.resizeSubscription$ = null;
@@ -28,7 +31,9 @@ export class AppComponent implements OnInit, OnDestroy
 		this.resizeSubscription$ = resizeObservable$.subscribe( evt => {
 			console.log('event: ', evt)
 			this.deviceService.updateDevice();
-		})
+		});
+
+		this.initFacebookService();
 	}
 
 	ngOnDestroy() 
@@ -37,5 +42,10 @@ export class AppComponent implements OnInit, OnDestroy
 			this.resizeSubscription$.unsubscribe();
 			this.resizeSubscription$ = null;
 		}
+	}
+
+	private initFacebookService(): void {
+		const initParams: InitParams = { xfbml:true, version:'v3.2'};
+		this.facebookService.init(initParams);
 	}
 }

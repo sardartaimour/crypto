@@ -4,6 +4,7 @@ import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { FacebookModule } from 'ngx-facebook';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,7 +26,8 @@ export function ConfigFactoryProvider(configService: AppConfigService)
 		AppRoutingModule,
 		HttpClientModule,
 		BrowserAnimationsModule,
-		ToastrModule.forRoot()
+		ToastrModule.forRoot(),
+		FacebookModule.forRoot()
 	],
 	providers: [
 		{
