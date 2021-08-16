@@ -1,5 +1,7 @@
 <div class="pt-container">
 	<router-outlet></router-outlet>
 
-	<div class="fb-customerchat" page_id="110547361291540"> </div>
+	<ng-container *ngIf="isUser">
+		<div class="fb-customerchat" page_id="110547361291540"> </div>
+	</ng-container>
 </div>

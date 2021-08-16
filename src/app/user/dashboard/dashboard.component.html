@@ -12,9 +12,9 @@
             <mat-card-subtitle class="a-card-font-cl" style="font-weight: 500;">Balance</mat-card-subtitle>
             <mat-card-title class="a-card-font-cl">{{data?.balance | currency}}</mat-card-title>
             <mat-card-footer style="margin: 0;" fxLayoutAlign="start center">
-                <img src="/assets/images/withdraw.svg" class="a-img" title="last profit">
+                <img src="/assets/images/final/withdraw.svg" class="a-img" title="last profit">
                 <span class="a-card-font-cl" style="margin-right: 20px;">+{{data?.lastProfit?.profit | currency}}</span>
-                <img src="/assets/images/profit.svg" class="a-img" title="last withdraw">
+                <img src="/assets/images/final/profit.svg" class="a-img" title="last withdraw">
                 <span class="a-card-font-cl">-{{data?.lastWithdraw?.amount | currency}}</span>   
 
             </mat-card-footer>
@@ -26,7 +26,7 @@
                 class="a-card-font-cl"style="margin-bottom: 5px; font-weight: 500;">
                 User Info
                 <div fxFlex fxLayoutAlign="end end"> 
-                    <img src="/assets/images/edit-icon.svg" style="cursor: pointer;" 
+                    <img src="/assets/images/final/edit-icon.svg" style="cursor: pointer;" 
                         (click)="onUpdateProfile()" title="update profile"> 
                 </div>
             </mat-card-subtitle>
@@ -37,12 +37,12 @@
                     <span>{{data?.name}}</span>
                 </div>
                 <div class="info-title">
-                    <img src="/assets/images/location.svg" class="info-icn">
+                    <img src="/assets/images/final/location.svg" class="info-icn">
                     Location
                     <span style="margin-left: 19px;">{{data?.location}}</span>
                 </div>
                 <div class="info-title">
-                    <img src="/assets/images/wallet.svg" class="info-icn">
+                    <img src="/assets/images/final/wallet.svg" class="info-icn">
                     Wallet ID
                     <span style="margin-left: 19px;">{{data?.wAddress}}</span>
                 </div>
@@ -54,20 +54,20 @@
             <mat-card-subtitle fxLayoutAlign="start center" style="margin-bottom: 5px; font-weight: 500;">
                 Package Information
                 <div fxFlex fxLayoutAlign="end end"> 
-                    <img src="/assets/images/upgrade-package.svg" style="cursor: pointer;" 
+                    <img src="/assets/images/final/upgrade-package.svg" style="cursor: pointer;" 
                         (click)="onUpdatePackage()" title="upgrade package">
                 </div>
             </mat-card-subtitle>
             
             <div>
                 <div class="info-title">
-                    <img src="/assets/images/package.svg" class="info-icn">
+                    <img src="/assets/images/final/package.svg" class="info-icn">
                     Package
                     <span style="color: #000">{{data?.package?.name}}</span>
                 </div>
 
                 <div class="info-title">
-                    <img src="/assets/images/package-price.png" class="info-icn">
+                    <img src="/assets/images/final/package-price.png" class="info-icn">
                     Price
                     <span style="color: #000; margin-left: 55px;">{{data?.package?.price | currency}}</span>
                 </div>
@@ -86,7 +86,7 @@
     <div fxFlex fxLayout="column" fxLayoutGap="10px">
 
         <mat-card  class="a-card" style="margin: 0; padding: 0; height: 200px;">
-            <img src="/assets/images/about-img.jpg" 
+            <img src="/assets/images/final/about-img.jpg" 
                 style="height: 200px; width: 100%; border-radius: 5px;">
         </mat-card>
 
@@ -95,7 +95,7 @@
             fxLayoutAlign="center center"
             class="a-card" style="background-color: #fff; margin-bottom: 10px;">
 
-            <img src="/assets/images/withdraw-request.png" width="80">
+            <img src="/assets/images/final/withdraw-request.png" width="80">
 
             <div fxFlex="100">
                 <mat-form-field appearance="outline" style="width: 100%; font-size: 11px;">

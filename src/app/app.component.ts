@@ -4,6 +4,7 @@ import { FacebookService, InitParams } from 'ngx-facebook';
 
 import { AppDeviceDetectorService } from './device.detecting.service';
 import { AppSplashScreenService } from './services/splash.screen.service';
+import { AppConfigService } from './services/app.config.service';
 
 
 @Component({
@@ -19,7 +20,8 @@ export class AppComponent implements OnInit, OnDestroy
 	constructor(
 		private deviceService: AppDeviceDetectorService,
 		private splashScreenService: AppSplashScreenService,
-		private facebookService: FacebookService
+		private facebookService: FacebookService,
+		private configService: AppConfigService
 	)
 	{
 		this.resizeSubscription$ = null;
@@ -42,6 +44,12 @@ export class AppComponent implements OnInit, OnDestroy
 			this.resizeSubscription$.unsubscribe();
 			this.resizeSubscription$ = null;
 		}
+	}
+
+	get isUser(): boolean
+	{
+		const p = this.configService._profile;
+		return p && p.hasOwnProperty('role') && p['role'] && p['role'].toLowerCase() === 'user';
 	}
 
 	private initFacebookService(): void {
