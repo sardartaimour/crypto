@@ -2,7 +2,7 @@
     <table>
         <tr>
             <th class="col-0">Sr#</th>
-            <th class="col-n">User ID</th>
+            <th class="col-n">User</th>
             <th class="col-n">Package</th>
             <th class="col-n">Transcation ID</th>
             <th class="col-n">Amount Paid</th>
@@ -17,7 +17,7 @@
 
             <tr  *ngFor="let d of data; let i=index">
                 <td class="col-0">{{i+1}}</td>
-                <td class="col-n"> {{d.uid}}</td>
+                <td class="col-n"> {{d.name}}</td>
                 <td class="col-n"> {{d?.package?.name}}</td>
                 <td class="col-n"> {{d?.package?.tranID}}</td>
                 <td class="col-n"> {{d?.package?.price | currency}}</td>

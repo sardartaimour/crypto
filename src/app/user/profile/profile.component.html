@@ -30,21 +30,17 @@
 
         <div class="profile-field-cont">
             <mat-form-field appearance="outline" class="profile-field">
-                <input matInput type="tel" autocomplete="off" placeholder="123-0123456789" 
-                    [formControl]="form.controls.phone" required />
+                <input matInput type="text" min="0" autocomplete="off" placeholder="xxxxxxxxx" 
+                    [formControl]="form.controls.phone" required (keypress)="allowPostiveIntegers($event)"/>
             </mat-form-field>
 
             <mat-error *ngIf="isFormSubmitted && form.controls.phone.hasError('required')" style="font-size: 10px;">
                 contact is required
             </mat-error>
 
-            <mat-error *ngIf="isFormSubmitted && form.controls.phone.hasError('pattern')" style="font-size: 10px;">
-                please provide valid phone number (xxx-xxxxxxxx)
+            <mat-error *ngIf="isFormSubmitted && (form.controls.phone.hasError('minlength') || form.controls.phone.hasError('maxlength'))" style="font-size: 10px;">
+                phone number should be in-betwen 6 to 15 digits
             </mat-error>
-
-            <!-- <mat-error *ngIf="isFormSubmitted && form.controls.phone.hasError('maxlength')" style="font-size: 10px;">
-                max 11 character allowed
-            </mat-error> -->
         </div>
 
         <div class="profile-field-cont">

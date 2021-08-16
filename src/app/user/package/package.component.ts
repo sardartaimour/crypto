@@ -82,8 +82,8 @@ export class UserPackageComponent implements OnInit, OnDestroy
 				this.toastr.success('Purchase requested successfully!', '200');
 				this.isFormSubmitted = false;
 				if (this.profile && this.profile.hasOwnProperty('isActive') && !this.profile['isActive']) {
-					this.profile['step'] = 'COMPLETE';
-					this.profile['isActive'] = true;
+					this.profile['step'] = 'COMPLETED';
+					// this.profile['isActive'] = true;
 				}
 			}, (err: any) => {
 				this.toastr.error(err['errorMessage'], err['statusCode']);

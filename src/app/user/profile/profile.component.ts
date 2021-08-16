@@ -282,11 +282,14 @@ export class UserProfileComponent implements OnInit {
 	ngOnInit() {
 		this.form.addControl('uid', new FormControl(null, [Validators.required]));
 		this.form.addControl('wAddress', new FormControl(null, [Validators.required, Validators.minLength(26), Validators.maxLength(65)]));
-		this.form.addControl('phone', new FormControl(null, [Validators.required, Validators.pattern("[0-9]{3}-[0-9]")]));
+		this.form.addControl('phone', new FormControl(null, [Validators.required, Validators.minLength(6), Validators.maxLength(15)]));
 		this.form.addControl('country', new FormControl('Pakistan', [Validators.required]));
 
 		if (this.profile) {
 			this.form.patchValue(this.profile);
+			if (!this.profile.isActive && !this.profile.country) {
+				this.form.controls.country.setValue('Pakistan');
+			}
 		}
 		
 		this.filteredOptions = this.form.controls.country.valueChanges
@@ -320,6 +323,20 @@ export class UserProfileComponent implements OnInit {
 		let inp = String.fromCharCode(event.keyCode);
 
 		if (/[a-zA-Z0-9]/.test(inp)) {
+			return true;
+		} else {
+			event.preventDefault();
+			return false;
+		}
+	}
+
+	allowPostiveIntegers(event: KeyboardEvent) 
+	{
+		const regex = new RegExp(/^[0-9]*$/g);
+
+		let inp = String.fromCharCode(event.keyCode);
+
+		if (regex.test(inp)) {
 			return true;
 		} else {
 			event.preventDefault();
