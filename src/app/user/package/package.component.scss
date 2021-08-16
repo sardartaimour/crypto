@@ -77,8 +77,9 @@ ol {
 
 .text-copied
 {
-    color: #000;
-    border: 1px solid #000;
+    color: #fff;
+    border: 1px solid $primary-color;
+    background-color: $primary-color;
     padding: 6px 12px;
     border-radius: 5px;
     font-weight: 500;

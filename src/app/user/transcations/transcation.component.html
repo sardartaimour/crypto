@@ -37,7 +37,7 @@
                     <td class="col-0">{{i+1}}</td>
                     <td class="col-n"> {{d.userID}}</td>
                     <td class="col-n"> 
-                        <span *ngIf="isPTabSelected">{{d.profit}}</span>
+                        <span *ngIf="isPTabSelected">{{d.profit | currency}}</span>
                         <span *ngIf="!isPTabSelected">{{d.amount | currency }}</span>
                     </td>
                     <td class="col-n"> {{d.balance | currency}}</td>
