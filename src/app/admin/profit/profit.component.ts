@@ -20,13 +20,13 @@ export class AddProfitComponent {
 	)
 	{
 		this.isSubmitted = false;
-		this.profitAmount = new FormControl(null, [Validators.required, Validators.min(0)]);
+		this.profitAmount = new FormControl(null, [Validators.required, Validators.min(0), Validators.max(1)]);
 	}
 
 	onAddProfit(): void
 	{
 		this.isSubmitted = true;
-		if (this.profitAmount.valid && this.profitAmount.value > 0) {
+		if (this.profitAmount.valid && this.profitAmount.value >= 0 && this.profitAmount.value <= 1) {
 			this.apiService.post('admin/profit', {profit: this.profitAmount.value}).then((resp: any) => {
 				this.toastr.success('Profit added successfully', '200');
 				this.isSubmitted = false;

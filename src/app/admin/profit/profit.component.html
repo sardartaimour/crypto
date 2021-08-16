@@ -9,7 +9,7 @@
         <mat-form-field appearance="outline" style="width: 100%; font-size: 12px;">
 			<mat-label>Enter Profit</mat-label>
 			<input matInput type="number" autocomplete="off" 
-                min="0" step="0.01" [formControl]="profitAmount"
+                step="0.01" [formControl]="profitAmount"
                 placeholder="Enter Profit" required/>
 		</mat-form-field>
 
@@ -18,8 +18,8 @@
                 Profit is required
             </mat-error>
 
-            <mat-error *ngIf="profitAmount.hasError('min')" style="font-size: 10px;">
-                Amount should be greater than 0
+            <mat-error *ngIf="profitAmount.hasError('min') || profitAmount.hasError('max')" style="font-size: 10px;">
+                Amount should be in-between 0 - 1
             </mat-error>
         </ng-container>
 

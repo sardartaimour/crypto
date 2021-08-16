@@ -45,7 +45,7 @@ export class UserPackageComponent implements OnInit, OnDestroy
 	ngOnInit()
 	{
 		this.onLoadPackages();
-		this.form.addControl('tranID', new FormControl(null, [Validators.required]));
+		this.form.addControl('tranID', new FormControl(null, [Validators.required, Validators.maxLength(70)]));
 	}
 
 	ngOnDestroy()
@@ -116,5 +116,17 @@ export class UserPackageComponent implements OnInit, OnDestroy
 	onCancel(): void 
 	{
 		this.commonService.editPackage = false;
+	}
+
+	allowAlphaNumeric(event: any): boolean
+	{
+		let inp = String.fromCharCode(event.keyCode);
+
+		if (/[a-zA-Z0-9]/.test(inp)) {
+			return true;
+		} else {
+			event.preventDefault();
+			return false;
+		}
 	}
 }

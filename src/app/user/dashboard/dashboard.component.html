@@ -44,7 +44,8 @@
                 <div class="info-title">
                     <img src="/assets/images/final/wallet.svg" class="info-icn">
                     Wallet ID
-                    <span style="margin-left: 19px;">{{data?.wAddress}}</span>
+                    <span style="margin-left: 19px;" [title]="data?.wAddress"
+                        class="text-overflow overflow-width">{{data?.wAddress}}</span>
                 </div>
             </div>
         </mat-card>
@@ -100,7 +101,8 @@
             <div fxFlex="100">
                 <mat-form-field appearance="outline" style="width: 100%; font-size: 11px;">
                     <mat-label>Enter Amount</mat-label>
-                    <input matInput type="number" autocomplete="off" step="0.01" min="10" [formControl]="withdrawAmount"
+                    <input matInput type="number" autocomplete="off" step="0.01" min="10" 
+                        [formControl]="withdrawAmount"
                         name="withdrawRequest" placeholder="Enter Amount" required/>
                 </mat-form-field>
 
@@ -109,8 +111,8 @@
                         Withdraw amount is required
                     </mat-error>
 
-                    <mat-error *ngIf="withdrawAmount.hasError('min')" style="font-size: 10px;">
-                        Requested amount should be greater than 10
+                    <mat-error *ngIf="withdrawAmount.hasError('min') || withdrawAmount.hasError('max')" style="font-size: 10px;">
+                        Requested amount should be in-between 10 - 10000
                     </mat-error>
                 </ng-container>
 

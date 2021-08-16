@@ -54,6 +54,20 @@
         margin: 0 !important;
         border-radius: 10px;
     }
+
+    .text-overflow
+    {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        display: inline-block;
+        vertical-align: bottom;
+    }
+
+    .overflow-width
+    {
+        width: 45ch;
+    }
 }
 
 @media (max-width: 425px) {
@@ -64,5 +78,10 @@
 
     .a-card-media {
         margin-bottom: 10px !important;
+    }
+
+    .overflow-width
+    {
+        width: 25ch !important;
     }
 }

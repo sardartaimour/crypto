@@ -30,12 +30,16 @@
 
         <div class="profile-field-cont">
             <mat-form-field appearance="outline" class="profile-field">
-                <input matInput type="number" autocomplete="off" placeholder="Contact" 
+                <input matInput type="tel" autocomplete="off" placeholder="Contact" 
                     [formControl]="form.controls.phone" required />
             </mat-form-field>
 
             <mat-error *ngIf="isFormSubmitted && form.controls.phone.hasError('required')" style="font-size: 10px;">
                 contact is required
+            </mat-error>
+
+            <mat-error *ngIf="isFormSubmitted && form.controls.phone.hasError('pattern')" style="font-size: 10px;">
+                please provide valid phone number
             </mat-error>
 
             <!-- <mat-error *ngIf="isFormSubmitted && form.controls.phone.hasError('maxlength')" style="font-size: 10px;">
@@ -45,12 +49,20 @@
 
         <div class="profile-field-cont">
             <mat-form-field appearance="outline" class="profile-field">
-                <input matInput type="text" autocomplete="off" placeholder="Wallet Address" 
-                    [formControl]="form.controls.wAddress" required/>
+                <input matInput type="text" autocomplete="off" placeholder="Wallet Address" (keypress)="allowAlphaNumeric($event)" 
+                    [formControl]="form.controls.wAddress" required minlength="26" maxlength="65"/>
             </mat-form-field>
 
             <mat-error *ngIf="isFormSubmitted && form.controls.wAddress.hasError('required')" style="font-size: 10px;">
                 wallet address is required
+            </mat-error>
+
+            <mat-error *ngIf="isFormSubmitted && form.controls.wAddress.hasError('minlength')" style="font-size: 10px;">
+                wallet address should be at-least 26 characters
+            </mat-error>
+
+            <mat-error *ngIf="isFormSubmitted && form.controls.wAddress.hasError('maxlength')" style="font-size: 10px;">
+                max 65 characters allowed
             </mat-error>
         </div>
 

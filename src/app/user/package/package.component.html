@@ -54,11 +54,16 @@
             <div fxFlex="100" style="margin-bottom: 10px;">
                 <mat-form-field appearance="outline" class="package-field">
                     <input matInput type="text" autocomplete="off" required
-                        placeholder="Enter your Business transcation ID" [formControl]="form.controls.tranID"/>
+                        placeholder="Enter your Business transcation ID" 
+                        [formControl]="form.controls.tranID" (keypress)="allowAlphaNumeric($event)"/>
                 </mat-form-field>
 
                 <mat-error *ngIf="isFormSubmitted && form.controls.tranID.hasError('required')" style="font-size: 10px;">
                     Transcation Id is required
+                </mat-error>
+
+                <mat-error *ngIf="isFormSubmitted && form.controls.tranID.hasError('maxlength')" style="font-size: 10px;">
+                    max 70 characters allowed
                 </mat-error>
             </div>
 

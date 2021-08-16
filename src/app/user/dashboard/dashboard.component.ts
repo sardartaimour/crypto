@@ -27,7 +27,7 @@ export class DashboardComponent implements OnInit {
 	{
 		this.data = null;
 		this.isSubmitted = false;
-		this.withdrawAmount = new FormControl(null, [Validators.required, Validators.min(10)]);
+		this.withdrawAmount = new FormControl(null, [Validators.required, Validators.min(10), Validators.max(10000)]);
 	}
 
 	ngOnInit()
