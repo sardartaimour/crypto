@@ -30,7 +30,7 @@
 
         <div class="profile-field-cont">
             <mat-form-field appearance="outline" class="profile-field">
-                <input matInput type="tel" autocomplete="off" placeholder="Contact" 
+                <input matInput type="tel" autocomplete="off" placeholder="xxx-xxxxxxxxx" 
                     [formControl]="form.controls.phone" required />
             </mat-form-field>
 
@@ -39,7 +39,7 @@
             </mat-error>
 
             <mat-error *ngIf="isFormSubmitted && form.controls.phone.hasError('pattern')" style="font-size: 10px;">
-                please provide valid phone number
+                please provide valid phone number (xxx-xxxxxxxx)
             </mat-error>
 
             <!-- <mat-error *ngIf="isFormSubmitted && form.controls.phone.hasError('maxlength')" style="font-size: 10px;">

@@ -282,7 +282,7 @@ export class UserProfileComponent implements OnInit {
 	ngOnInit() {
 		this.form.addControl('uid', new FormControl(null, [Validators.required]));
 		this.form.addControl('wAddress', new FormControl(null, [Validators.required, Validators.minLength(26), Validators.maxLength(65)]));
-		this.form.addControl('phone', new FormControl(null, [Validators.required, Validators.pattern(/^\+(?:[0-9] ?){6,14}[0-9]$/)]));
+		this.form.addControl('phone', new FormControl(null, [Validators.required, Validators.pattern("[0-9]{3}-[0-9]{12}")]));
 		this.form.addControl('country', new FormControl('Pakistan', [Validators.required]));
 
 		this.form.patchValue(this.profile);
