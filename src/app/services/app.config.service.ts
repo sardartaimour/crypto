@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders, HttpResponse } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
     providedIn: 'root'
@@ -17,6 +18,7 @@ export class AppConfigService
     {
         return new Promise((resolve, reject) =>
         {   
+            const url = environment.url;
             // admin token
             let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMTdlYjgzNGVhYzUwMzNlNDM5NGZjMyIsImlhdCI6MTYyOTAzMDk5MSwiZXhwIjoxNjI5MjkwMTkxfQ.jq7kpiWi5nuKJiIl3jYGRAhuyWuXk7AZ00-PnEjTqT4';
 
@@ -27,7 +29,7 @@ export class AppConfigService
                 'auth-token': token
             });
 
-            this.http.get(`http://localhost:3000/user/profile`, 
+            this.http.get(`${url}user/profile`, 
                 { headers: headers, observe: 'response' })
             .subscribe((resp: HttpResponse<any>) => {
                 

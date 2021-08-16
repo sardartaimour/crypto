@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
 import { HttpErrorResponse } from '@angular/common/http';
 import { HttpResponse } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 
 @Injectable({providedIn: 'root'})
@@ -16,7 +17,7 @@ export class ApiService
     constructor(protected http: HttpClient)
     {
         this.options = {observe: 'response'};
-        this.baseUrl = 'http://localhost:3000/';
+        this.baseUrl = environment.url;
 
         // admin token
         this.token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMTdlYjgzNGVhYzUwMzNlNDM5NGZjMyIsImlhdCI6MTYyOTAzMDk5MSwiZXhwIjoxNjI5MjkwMTkxfQ.jq7kpiWi5nuKJiIl3jYGRAhuyWuXk7AZ00-PnEjTqT4';
