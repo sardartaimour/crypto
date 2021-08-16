@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  url: 'https://perfect-trading-internal.herokuapp.com/'
+  url: 'http://perfect-trading-inc.herokuapp.com/'
 };
